@@ -1,0 +1,832 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>webpage</title>
+    <style>
+        /* Custom navbar styling */
+        .custom-navbar {
+            background: linear-gradient(135deg, #1d2671, #c33764); /* Gradient from dark blue to deep purple */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* Slight shadow for a modern effect */
+            padding: 10px 20px;
+        }
+      
+        .custom-navbar .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #f0f0f0; /* Light gray for better contrast */
+            transition: color 0.3s ease;
+        }
+      
+        .custom-navbar .navbar-brand:hover {
+            color: #ffcc29; /* Golden yellow on hover */
+        }
+      
+        .custom-navbar .navbar-title {
+            font-style: italic;
+            margin-left: 0.5rem;
+        }
+      
+        .custom-navbar .nav-link {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #e0e0e0; /* Light color for better readability */
+            transition: color 0.3s ease;
+        }
+      
+        .custom-navbar .nav-link:hover {
+            color: #ffcc29; /* Yellow color on hover for emphasis */
+        }
+      
+        .custom-navbar .nav-link.active {
+            color: #ffcc29; /* Bright yellow for the active link */
+            font-weight: bold;
+        }
+      
+        .custom-navbar .nav-link .nav-text {
+            margin-left: 0.5rem;
+        }
+      
+        .custom-navbar .navbar-toggler {
+            border-color: #ffcc29; /* Matching the gold theme */
+        }
+      
+        .custom-navbar .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ffcc29' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 204, 41, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+      
+        /* Dropdown menu styling */
+        .custom-navbar .dropdown-menu {
+            background-color: #333; /* Dark gray background */
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for elegance */
+        }
+      
+        .custom-navbar .dropdown-item {
+            color: #e0e0e0; /* Light color for dropdown items */
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+      
+        .custom-navbar .dropdown-item:hover {
+            background-color: #ffcc29; /* Gold background on hover */
+            color: #000; /* Black text on hover for contrast */
+        }
+  
+        .logo-text {
+              font-size: 32px;
+              font-weight: bold;
+          }
+  
+          .pro {
+              color: #0053ff; /* Blue color for "PRO" */
+          }
+  
+          .element {
+              background: linear-gradient(135deg, #4c5dff, #ff6ab9); /* Gradient for "ELEMENT" */
+              -webkit-background-clip: text;
+              background-clip: text;
+              color: transparent;
+          }
+
+          /* body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .header {
+            background-color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 36px;
+            color: #3e5bd3;
+        }
+        .header span {
+            color: #d53e85;
+        }
+        .services {
+            display: flex;
+            justify-content: center;
+            margin: 20px auto;
+        }
+        .service-box {
+            background-color: white;
+            padding: 20px;
+            margin: 0 10px;
+            width: 250px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+        }
+        .service-box i {
+            font-size: 40px;
+            color: #3e5bd3;
+        }
+        .service-box h3 {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+        .service-box p {
+            font-size: 14px;
+            color: #555;
+        } */
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .header {
+            background-color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 36px;
+            color: #3e5bd3;
+        }
+        .header span {
+            color: #d53e85;
+        }
+        .services {
+            display: flex;
+            justify-content: space-around;
+            margin: 50px auto;
+            flex-wrap: wrap;
+            max-width: 1200px;
+        }
+        .service-box {
+            background-color: white;
+            padding: 30px;
+            width: 220px;
+            height: 220px;
+            margin: 20px;
+            text-align: center;
+            border-radius: 50%;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+        .service-box i {
+            font-size: 40px;
+            color: #3e5bd3;
+        }
+        .service-box h3 {
+            font-size: 18px;
+            margin-top: 10px;
+            color: #333;
+        }
+        .service-box p {
+            font-size: 13px;
+            color: #555;
+            text-align: center;
+        }
+        .service-box:hover {
+            transform: scale(1.05);
+        }
+
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            color: #333;
+        }
+        .header {
+            background-color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 36px;
+            color: #3e5bd3;
+        }
+        .header span {
+            color: #d53e85;
+        }
+        .services {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 50px auto;
+            max-width: 1200px;
+        }
+        .service-box {
+            background-color: white;
+            padding: 30px;
+            width: 250px;
+            height: 250px;
+            margin: 20px;
+            text-align: center;
+            border-radius: 50%;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.381);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+        .service-box i {
+            font-size: 40px;
+            color: #3e5bd3;
+        }
+        .service-box h3 {
+            font-size: 18px;
+            margin-top: 10px;
+            color: #333;
+        }
+        .service-box p {
+            font-size: 13px;
+            color: #555;
+            text-align: center;
+        }
+        .service-box:hover {
+            transform: scale(1.05);
+        }
+
+        .container1 {
+    position: relative;
+}
+.text {
+    position: absolute;
+    color: white;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    
+}
+
+.container3 {
+    position: relative;
+}
+.text3 {
+    position: absolute;
+   
+    color: white;
+    text-align: center;
+    top: 50%;
+    left: 35%;
+    transform: translate(-50%,-50%);
+    
+}
+
+
+
+      </style>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <div class="logo-text">
+                      <img src="logo2.png" alt="">
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="">
+                            <i class="fas fa-house-user"></i> <span class="nav-text">Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">
+                            <i class="fas fa-user-plus"></i> <span class="nav-text">ABOUT US</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">
+                            <i class="fas fa-sign-in-alt"></i> <span class="nav-text">WORK</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-sign-out-alt"></i> <span class="nav-text">BLOG</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" >
+                            <i class="fas fa-ellipsis-h"></i> <span class="nav-text">CONTACT US</span>
+                        </a>         
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<div class="container1" style="background-color: #932f64; height: 500px;">
+    <div class="text1" style="padding-top: 90px; color: white;">
+        <center>
+        <h1><b><b>Pro Element Creatives</b></b></h1>
+        <h3 style="padding-top: 20px;"><b>Website Development And Graphic Design Company</b></h3>
+        <p style="padding-top: 45px; padding-left: 50px; padding-right: 50px;">We are one of the leading advertising agency and design space with a bunch of creative and passionate team born in 2015. We are a combo of old and new, real and virtual, large and small, unique and extraordinary. We strongly believe in quality more than quantity. We create or recreate a fresh and attractive identity for your product, services, and brands for the right audience.</p>
+        <div style="padding-top: 18px;">
+        <button type="button" class="btn btn-primary">Our Service</button>    <button type="button" class="btn btn-primary">Our Works</button>
+    </div>
+    </center>
+    </div>
+</div>
+<div class="container">
+<div class="header">
+    <h1>Our Business & <span>Financial</span><br>
+         Consulting Services</h1>
+</div>
+
+<div class="services">
+    <div class="service-box">
+        <i class="fas fa-lightbulb"></i>
+        <h3>Branding</h3>
+        <p>We are the masters in branding and rebranding products and services...</p>
+    </div>
+    <div class="service-box">
+        <i class="fas fa-code"></i>
+        <h3>Web development</h3>
+        <p>Your website makes an overall impact on your products and services...</p>
+    </div>
+    <div class="service-box">
+        <i class="fas fa-share-alt"></i>
+        <h3>Social media promotion</h3>
+        <p>In this 21st century, social media is considered as the fifth estate...</p>
+    </div>
+</div>
+
+
+
+<div class="services">
+    <div class="service-box">
+        <i class="fas fa-paint-brush"></i>
+        <h3>Graphic Designing</h3>
+        <p>It is the art and practice of planning and projecting ideas and experiences...</p>
+    </div>
+    <div class="service-box">
+        <i class="fas fa-shopping-cart"></i>
+        <h3>E-Commerce Development</h3>
+        <p>Ecommerce is commonly known as electronic commerce. It involves buying and selling goods...</p>
+    </div>
+    <div class="service-box">
+        <i class="fas fa-palette"></i>
+        <h3>UI/UX Design</h3>
+        <p>UX design is the process of designing a better digital experience for users...</p>
+    </div>
+</div>
+</div>
+
+  <div class="container3">
+    <img src="gp2.jpg" alt="" style="width: 100%; height: 500px;">
+    <div class="text3" style="color: #000;">
+        <h4>About Pro Element Creatives</h4>
+        <h1><b>WE Are The One...!</b></h1>
+        <p>We are one of the leading advertising agency and design space with a bunch of creative and passionate team born in 2015. We are a combo of old and new, real and virtual, large and small, unique and extraordinary. We strongly believe in quality more than quantity. We create or recreate a fresh and attractive identity for your product, services, and brands for the right audience. We are the one who is an unlimited and wide variety in the types of companies that may be big or small. WE are the one who with 100+ satisfied clients across worldwide.</p>
+    </div>
+</div><br><br>
+
+<div class="container">
+    <div class="row">
+        <center>
+        <h1>What Make Us Unique</h1>
+        <p>We create or recreate a fresh and attractive identity for your product, services, and brands for the right audience. We are the one who is an unlimited and wide variety in the types of companies that may be big or small. We are the one who with 100+ satisfied clients across worldwide.</p>
+        </center>
+        <div class="col-3">
+            <div class="card" style="color: white;">
+                <div class="card-body" style="background-color: #d53e85; height: 280px;">
+                  <center>
+                   <h5> <b>High Quality</b></h5>
+                  </center>
+                  <p>Providing all services with a rich quality. Offering best-qualified services, and always behave positively and professionally.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card" style="color: white;">
+                <div class="card-body" style="background-color: #d53e85; height: 280px;">
+                 <center>
+                    <h5><b>Progressive</b></h5>
+                 </center>
+                <p>Our company is progressive in all ways. This quality will reflect in all the services that are provided by us.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card" style="color: white;">
+                <div class="card-body" style="background-color: #d53e85; height: 280px;">
+                 <center>
+                    <h5><b>Affordable</b></h5>
+                 </center>
+               <p>Our services are affordable to all, everything is done with its uniqueness while keeping it affordable.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card" style="color: white;">
+                <div class="card-body" style="background-color: #d53e85; height: 280px;">
+                  <center>
+                    <h5><b>Strive For Excellence</b></h5>
+                  </center>
+                  <p>Always we strive for excellence through that we are providing a good service for everyone perfectly and excellently.</p>
+                </div>
+            </div>
+        </div>
+    </div><br><br>
+
+    <div class="row">
+        <div class="col-3">
+            <div class="card" style="color: white;">
+                <div class="card-body" style="background-color: #d53e85; height: 280px;">
+                  <center>
+                    <h5><b>Timeline</b></h5>
+                  </center>
+                  <p>All services are done excellently with the stated time and their quality is also taken care of. Every service is completing on time.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card" style="color: white;">
+                <div class="card-body" style="background-color: #d53e85; height: 280px;">
+                 <center>
+                    <h5><b>Dedication</b></h5>
+                 </center>
+                <p>All our services are done with more dedication. You can see the dedication that we show through the quality and richness of our each and service.</p>
+                
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card" style="color: white;">
+                <div class="card-body" style="background-color: #d53e85; height: 280px;">
+                 <center>
+                    <h5><b>Honesty</b></h5>
+                 </center>
+                <p>Honest is our success, we are honest in every work. So we make the best of every service that you give. Honesty is the main thing that makes our service-rich one.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card" style="color: white;">
+                <div class="card-body" style="background-color: #d53e85;; height: 280px;">
+                 <center>
+                    <h5><b>Customer Satisfaction</b></h5>
+                 </center>
+                  <p>Every service we do our best to give complete satisfaction to the customers. Our goal is to satisfy the customers in every way, we make it by creating the best services.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><br><br>
+
+     <div class="container">
+        <div class="row" style="background-color: #254be2d9;">
+            <center><br><br>
+                <h1 style="color: white;">Industry Expertise</h1>
+               </center>
+            <div class="col-4"><br><br>
+                <div class="card">
+                    
+                    <div class="card-body" style="background-color: #254be2d9; height: 180px;">
+                        <center>
+                            <img src="healthcare.png" alt="" style="color: #932f64;">
+                            <br>
+                            <h4 style="color: white;"><b>Healthcare</b></h4>
+                         </center>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4"><br><br>
+                <div class="card">
+                    <div class="card-body" style="background-color: #254be2d9; height: 180px;">
+                       <center>
+                        <img src="retail.png" alt="" style="color: #932f64;">
+                        <h4 style="color: white;"><b>Retail</b></h4>
+                       </center>
+                    
+                    </div>
+                </div>
+            </div>
+            <div class="col-4"><br><br>
+                <div class="card">
+                    <div class="card-body" style="background-color: #254be2d9; height: 180px;">
+                    <center>
+                        <img src="marketing.png" alt="" style="color: #932f64;">
+                        <h4 style="color: white;"><b>Marketing & Advertising</b></h4>
+                       </center>
+                  
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row" style="background-color: #254be2d9;"><br><br>
+            <div class="col-4"><br><br>
+                <div class="card">
+                    
+                    <div class="card-body" style="background-color: #254be2d9; height: 180px;">
+                        <center>
+                            <img src="manifa.png" alt="" style="color: #932f64;">
+                            <h4 style="color: white;"><b>Manufacturing</b></h4>
+                         </center>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4"><br><br>
+                <div class="card">
+                    <div class="card-body" style="background-color: #254be2d9; height: 180px;">
+                       <center>
+                        <img src="longis.png" alt="" style="color: #932f64;">
+                        <h4 style="color: white;"><b>Logistics & Transporatation</b></h4>
+                       </center>
+                    
+                    </div>
+                </div>
+            </div>
+            <div class="col-4"><br><br>
+                <div class="card">
+                    <div class="card-body" style="background-color: #254be2d9; height: 180px;">
+                    <center>
+                        <img src="tele.png" alt="" style="color: #932f64;">
+                        <h4 style="color: white;"><b>Telecommunication</b></h4>
+                       </center>
+                  
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row" style="background-color: #254be2d9; height: 250px;" ><br><br>
+            <div class="col-4"><br><br>
+                <div class="card">
+                    
+                    <div class="card-body" style="background-color: #254be2d9; height: 180px;">
+                        <center>
+                            <img src="fmcg.png" alt="" style="color: #932f64;">
+                            <h4 style="color: white;"><b>FMCG</b></h4>
+                         </center>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4"><br><br>
+                <div class="card">
+                    <div class="card-body" style="background-color: #254be2d9; height: 180px;">
+                       <center>
+                        <img src="edu.png" alt="" style="color: #932f64;">
+                        <h4 style="color: white;"><b>Education</b></h4>
+                       </center>
+                    
+                    </div>
+                </div>
+            </div>
+            <div class="col-4"><br><br>
+                <div class="card">
+                    <div class="card-body" style="background-color: #254be2d9; height: 180px;">
+                    <center>
+                        <img src="public.png" alt="" style="color: #932f64;">
+                        <h4 style="color: white;"><b>Public Services</b></h4>
+                       </center>
+                  
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div><br>
+
+    <div class="container">
+       <center>
+        <h6 style="color: yellow;">SOME HIGHLIGHTS OF OUR WORK</h6>
+        <h1 style="color: #932f64;">We've created cool stuff,check a few!</h1>
+       </center>
+       <div class="row" style="width: 1160px;">
+        <div class="col-4"style="width: 290px;height:100px;">
+            <div class="card" style="width: 290px;height:100px;">
+                        <img src="images1000.jpg" alt="" style="color: #932f64; transition: transform 0.3s;"
+                        onmouseover="this.style.transform='scale(1.1)';" 
+                        onmouseout="this.style.transform='scale(1)';">
+                </div>
+            </div>
+            <div class="col-4"style="width: 290px;height:100px;">
+                <div class="card"style="width: 290px;height:100px;">
+                            <img src="images2000.jpg" alt="" style="color: #932f64; transition: transform 0.3s;"
+                            onmouseover="this.style.transform='scale(1.1)';" 
+                            onmouseout="this.style.transform='scale(1)';">
+                    </div>
+                </div>
+                <div class="col-4"style="width: 290px; height:100px;">
+                    <div class="card" style="width: 290px;height:100px;">
+                                <img src="images1001.jpg" alt="" style="color: #932f64;height: 160px; transition: transform 0.3s;"
+                                onmouseover="this.style.transform='scale(1.1)';" 
+                                onmouseout="this.style.transform='scale(1)';">
+                        </div>
+                    </div>
+                    <div class="col-4"style="width: 290px; ">
+                        <div class="card" style="width: 290px;height:100px;">
+                                    <img src="images800.jpg" alt="" style="color: #932f64;height: 160px;" transition: transform 0.3s;"
+                                    onmouseover="this.style.transform='scale(1.1)';" 
+                                    onmouseout="this.style.transform='scale(1)';">
+                            </div>
+                        </div>
+        </div>
+<br>
+
+        <div class="row" style="width: 1160px;">
+            <div class="col-4"style="width: 290px;">
+                <div class="card" style="width: 290px;">
+                            <img src="images5000.jpg" alt="" style="color: #932f64; transition: transform 0.3s; height: 163px;"
+                            onmouseover="this.style.transform='scale(1.1)';" 
+                            onmouseout="this.style.transform='scale(1)';">
+                    </div>
+                </div>
+                <div class="col-4"style="width: 290px;">
+                    <div class="card"style="width: 290px;">
+                                <img src="images5100.jpg" alt="" style="color: #932f64; transition: transform 0.3s; height: 163px;"
+                                onmouseover="this.style.transform='scale(1.1)';" 
+                                onmouseout="this.style.transform='scale(1)';">
+                        </div>
+                    </div>
+                    <div class="col-4"style="width: 290px; ">
+                        <div class="card" style="width: 290px;">
+                                    <img src="images5300.jpg" alt="" style="color: #932f64;height: 160px; transition: transform 0.3s;"
+                                    onmouseover="this.style.transform='scale(1.1)';" 
+                                    onmouseout="this.style.transform='scale(1)';">
+                            </div>
+                        </div>
+                        <div class="col-4"style="width: 290px; ">
+                            <div class="card" style="width: 290px;">
+                                        <img src="images5400.jpg" alt="" style="color: #932f64;height: 160px; transition: transform 0.3s;"
+                                        onmouseover="this.style.transform='scale(1.1)';" 
+                                        onmouseout="this.style.transform='scale(1)';">
+                                </div>
+                            </div>
+            </div>
+
+
+            <div class="row" style="width: 1160px;">
+                <div class="col-4"style="width: 290px;">
+                    <div class="card" style="width: 290px;">
+                        <img src="images5500.jpg" alt="" style="color: #932f64; transition: transform 0.3s; height: 163px;"
+                        onmouseover="this.style.transform='scale(1.1)';" 
+                        onmouseout="this.style.transform='scale(1)';">
+                    </div>
+                </div>
+                    <div class="col-4"style="width: 290px;">
+                        <div class="card"style="width: 290px;">
+                            <img src="images5600.jpg" alt="" style="color: #932f64; transition: transform 0.3s; height: 163px;"
+                            onmouseover="this.style.transform='scale(1.1)';" 
+                            onmouseout="this.style.transform='scale(1)';">
+                            </div>
+                        </div>
+                        <div class="col-4"style="width: 290px; height:100px;">
+                            <div class="card" style="width: 290px;height:100px;">
+                                <img src="images5700.jpg" alt="" style="color: #932f64;height: 160px; transition: transform 0.3s; height: 163px;"
+                                onmouseover="this.style.transform='scale(1.1)';" 
+                                onmouseout="this.style.transform='scale(1)';">
+                                </div>
+                            </div>
+                            <div class="col-4"style="width: 290px; ">
+                                <div class="card" style="width: 290px;">
+                                            <img src="images5800.jpg" alt="" style="color: #932f64;height: 160px; transition: transform 0.3s; height: 163px;"
+                                            onmouseover="this.style.transform='scale(1.1)';" 
+                                            onmouseout="this.style.transform='scale(1)';">
+                                    </div>
+                                </div>
+                </div>
+            </div>        
+        </div><br><br>
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                     <div class="card-body">
+                     <img src="images5800.jpg" alt="" style="height: 500px; width: 450px;">
+                     </div>
+                </div>
+                <div class="col-6">
+                    <!-- <div class="card"> -->
+                        <!-- <img src="nature17.jpg" alt="" style="height: 260px;"> -->
+                        <div class="card-body">
+                        <!-- <img src="" alt=""> -->
+                        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <h3><b>What People Says About
+                                <br>
+                                    Our Work</b></h3>
+                              <div class="carousel-item active">
+                                <!-- <img src="..." class="d-block w-100" alt="..."> -->
+                                 <!-- <div style="padding-bottom: 500px;"> -->
+                                 <p>Pro element did an amazing job for us.They have excellently done our brandingand we are very much sure that our reach will increase through this.They where done that perfectly and brillianty</p>
+                                 <h6><b>Mr.Rasheed</b></h6>
+                                 <h6>kris</h6>
+                                 <!-- </div> -->
+
+                              </div>
+                              <div class="carousel-item">
+                                <!-- <img src="..." class="d-block w-100" alt="..."> -->
+                                 <p>The best service that i have ever got,you have done our e-commerce website in such a greate way.We wholeheartedly recommend them to all associates as a perfect service.</p>
+                                <h6><b>Mr.Abdul Gafur Anadiyan</b></h6>
+                                <h6>Swa Diamonds</h6>
+                                </div>
+                              <div class="carousel-item">
+                                <!-- <img src="..." class="d-block w-100" alt="..."> -->
+                                 <p>We have got a greate service from Pro Element Creatives.Their dedication to all the services are brilliant.They have built our UI/UX website.their approach and their hardwork made that a perfect one</p>
+                                <h6><b>Mr.Harish</b></h6>
+                                <h6>EPS</h6>
+                                </div>
+                            </div><br><br><br><br><br><br><br><br><br><br><br>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span style="color: black;"><</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span  style="color: black;">></span>
+                            </button>
+                          </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="container">
+    <div style="background: linear-gradient(90deg, #0058ae, #cb0081); color: white; width: 100%; height: 370px;">
+    
+    <br>    <div class="row">
+        <h5 style="padding-left: 35px; color: yellow;">GOT A PROJECT IN MIND?</h5>
+        <h2 style="padding-left: 35px;">Let’s make something great
+            <br> work together.</h2>
+          
+        
+      <br> <div class="col-3">
+       <img src="logo2.png" alt="">
+       <br><br><br>
+       <p style="font-size: 14px; padding-left: 10px;">&copy; 2024 proelementcreatives</p>
+       </div>
+       <div class="col-3">
+        <ul style="list-style-type: none; padding: 0;">
+            <li><a href="#" style="color: white; text-decoration: none;">About</a></li>
+            <li><a href="#" style="color: white; text-decoration: none;">Services</a></li>
+            <li><a href="#" style="color: white; text-decoration: none;">Work</a></li>
+            <li><a href="#" style="color: white; text-decoration: none;">Careers</a></li>
+            <li><a href="#" style="color: white; text-decoration: none;">Blog</a></li>
+            <li><a href="#" style="color: white; text-decoration: none;">Contact</a></li>
+        </ul>
+       </div>
+       <div class="col-3">
+        <ul style="list-style-type: none; padding: 0;">
+            <li style="color: white;">Graphic Designing</li>
+            <li style="color: white;">Web Development</li>
+            <li style="color: white;">Social Media Promotion</li>
+            <li style="color: white;">Branding</li>
+            <li style="color: white;">Package Designing</li>
+            <li style="color: white;">E-Commerce Development</li>
+            <li style="color: white;">UI/UX Design</li>
+        </ul>
+       </div>
+       <div class="col-3">
+        <div>
+            <p>Kinfra Techno Industrial Park</p>
+            <p>Kakkanchery, Thenhipalam – PO</p>
+            <p>Malappuram</p>
+            <a href="mailto:info@proelementcreatives.com" style="color: white; text-decoration: none;">info@proelementcreatives.com</a>
+            <p>(+91) 7907173719</p>
+        </div>
+    </div>
+</div>
+       </div>
+        
+       
+</div>
+
+</div>
+
+       
+    
+    
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  </body>
+</html>
